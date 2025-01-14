@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
             val username = binding.editUsername.text.toString()
             val password = binding.editPassword.text.toString()
 
-            val res = db.untilizadorInsert(username,password)
+            val res = db.utilizadorInsert(username,password)
 
             if(res > 0){
                 Toast.makeText(applicationContext, "Usuario logado com sucesso $res".toString(), Toast.LENGTH_SHORT).show()
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 val username = binding.editUsername.text.toString()
                 val password = binding.editPassword.text.toString()
 
-                val res = db.untilizadorUpdate(id, username, password)
+                val res = db.utilizadorUpdate(id, username, password)
                 if (res > 0) {
                     Toast.makeText(
                         applicationContext,
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         binding.buttonDelete.setOnClickListener {
             if(pos >= 0) {
                 val id = listaUtilizadores[pos].id
-                var res = db.untilizadorDelete(id)
+                var res = db.utilizadorDelete(id)
                 if (res > 0) {
                     Toast.makeText(
                         applicationContext,

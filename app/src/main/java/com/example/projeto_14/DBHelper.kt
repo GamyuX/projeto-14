@@ -26,7 +26,7 @@ class DBHelper(context: Context) :
         onCreate(db)
     }
 
-    fun untilizadorInsert(nome: String, password: String): Long {
+    fun utilizadorInsert(nome: String, password: String): Long {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome",nome)
@@ -37,7 +37,7 @@ class DBHelper(context: Context) :
         return res
     }
 
-    fun untilizadorUpdate(id: Int, nome: String, password: String): Int {
+    fun utilizadorUpdate(id: Int, nome: String, password: String): Int {
         val db = this.writableDatabase
         val contentValues = ContentValues()
         contentValues.put("nome",nome)
@@ -47,7 +47,7 @@ class DBHelper(context: Context) :
         return res
     }
 
-    fun untilizadorDelete(id: Int): Int {
+    fun utilizadorDelete(id: Int): Int {
         val db = this.writableDatabase
         val res = db.delete("utilizador","id=?", arrayOf(id.toString()))
         db.close()
